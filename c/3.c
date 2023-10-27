@@ -4,6 +4,7 @@
 #include <stdio.h>
 
 int main() {
+  // Need to use long as numbers can get really big
   long divisor = 3;
   long number = 600851475143;
 
