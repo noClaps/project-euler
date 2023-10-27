@@ -13,16 +13,11 @@ char palindromeCheck(int number) {
 
   sprintf(num, "%d", number);
 
-  int length = 0;
-  while (num[length] != '\0') {
-    length++;
-  }
-
+  int length = strlen(num);
   int end = length - 1;
 
-  for (begin = 0; begin < length; begin++) {
+  for (begin = 0; begin < length; begin++, end--) {
     revnum[begin] = num[end];
-    end--;
   }
 
   revnum[begin] = '\0';
