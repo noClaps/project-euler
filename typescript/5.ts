@@ -12,3 +12,5 @@ for (const i of primes) {
 
 console.log(product);
 // 232792560
+
+export {}

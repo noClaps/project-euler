@@ -23,3 +23,5 @@ while (primes.length < 10_001) {
 
 console.log(primes[10_000]);
 // 104743
+
+export {}

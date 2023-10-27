@@ -29,3 +29,5 @@ function squareOfSum(max: number): number {
 
 console.log(Math.abs(squareOfSum(100) - sumOfSquares(100)));
 // 25164150
+
+export {}

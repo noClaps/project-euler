@@ -13,3 +13,5 @@ while (divisor <= num) {
 
 console.log(divisor);
 // 6857
+
+export {}

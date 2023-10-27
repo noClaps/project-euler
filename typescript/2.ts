@@ -18,3 +18,5 @@ while (a < 4e6) {
 
 console.log(sum);
 // 4613732
+
+export {}

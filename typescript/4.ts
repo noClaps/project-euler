@@ -14,3 +14,5 @@ for (let i = 999; i >= 100; i--) {
 
 console.log(currentMax);
 // 906609
+
+export {}
