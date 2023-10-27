@@ -2,12 +2,12 @@
 // What is the largest prime factor of the number 600851475143?
 
 let num = 600851475143;
-let divisor = 2;
+let divisor = 3;
 while (divisor <= num) {
     if (num % divisor == 0) {
         num /= divisor;
     } else {
-        divisor++;
+        divisor += 2;
     }
 }
 
