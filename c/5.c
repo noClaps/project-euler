@@ -10,12 +10,7 @@ int main() {
   int primes[] = {2, 3, 5, 7, 11, 13, 17, 19};
   int product = 1;
 
-  int length = 0;
-  while (primes[length] < 20) {
-    length++;
-  }
-
-  for (int i = 0; i < length; i++) {
+  for (int i = 0; primes[i] < 20; i++) {
     product *= pow(primes[i], floor(log(20) / log(primes[i])));
   }
   printf("%d\n", product);
