@@ -1,0 +1,47 @@
+# My notes on solutions in different languages
+
+My main language is TypeScript and I know Python too, but I'm basically just messing around and trying to learn the other languages like C. There's probably some optimisations to be made everywhere, but I'm just trying my best.
+
+Also none of them are general solutions, and work only for the specific problem.
+
+## Problem 1
+A pretty simple solution, I got it fairly quickly in all languages.
+
+## Problem 2
+Similarly easy solution, got it in all langs.
+
+## Problem 3
+My first introduction to `long` in C, since the numbers were exceeding the integer limit. Otherwise a fairly simple solution.
+
+## Problem 4
+Working with strings in C is hell. I got the solution very quickly everywhere else, but I have no clue how to reverse a string in C. I eventually got the solution by simply looking up how to reverse a string in C, and copying the answer. I kind of get it, but I'll definitely need someone to explain exactly what it's doing.
+
+It kinda makes me wanna stay away from working with strings in C, and just stick to numbers. But at the same time, I really do want to learn how C works for _everything_, not just the easy stuff. I'm addicted to the speed. Might end up returning to C for strings once I'm more comfortable with the other concepts of C.
+
+## Problem 5
+I did manage to solve this one initially myself, but I found a more efficient way to do it online, so I ended up implementing that instead. It uses the fact that the least common multiple of all numbers up to a certain number is the product of all of the primes, each to the power of the fraction log(20) / log(prime).
+
+The math behind it seems pretty complicated, and even reading through the overview on the Project Euler website, I don't fully get it yet.
+
+## Problem 6
+Super easy problem, solved in all languages without much issue.
+
+## Problem 7
+I wrote my own prime checker function for this one in C, and I'm very proud of it. At first it was running pretty slowly, but after getting help from @MesterMan03, I got it running really quickly.
+
+I haven't really talked about the other languages so far, so here's a small update I suppose. This was the last problem I did in Python, and it was really easy in both TS and Py. Pretty much all of them have been really easy problems so far, it's just C that's been giving me issues since I'm not nearly as comfortable in it.
+
+## Problem 8
+Had to work with strings again in C, but I've come to realise that as long as I'm not writing a function that has to return a string it's all fine and easy. Pretty easy solution to do otherwise.
+
+## Problem 9
+My initial C code was running slower than my TS code, even though they were both running the exact same code. I'm not fully sure why C was taking a longer time to run the same thing.
+
+New plan: Solve the problem in TypeScript, read the overview to find a better algorithm or way of doing it, and attempt to implement that in C. This will kill two birds with one stone, since I'll be solving the problems, as well as implementing an algorithm (usually a more complex one) in the language I'm trying to learn.
+
+Doing that got my C code to run 40 times faster than TS. The combination of using a faster algorithm with a compiled language means stupidly quick speeds. I love programming.
+
+## Problem 10
+The TypeScript code that I came up with seemed to be pretty good, but of course there's a far more optimised way to do it. Turns out that optimised way returns the correct value about 10 times faster in C than my original code did in TS. In my eyes, that probably means I wrote some decent TS.
+
+
