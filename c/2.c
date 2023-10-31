@@ -9,16 +9,14 @@
 int main() {
   int sum = 0;
   int a = 1;
-  int b = 2;
+  int b = 1;
+  int c = a + b;
 
-  while (a < 4e6) {
-    if (a % 2 == 0) {
-      sum += a;
-    }
-
-    int temp = a;
-    a = b;
-    b = temp + a;
+  while (c < 4e6) {
+    sum += c;
+    a = b + c;
+    b = c + a;
+    c = a + b;
   }
 
   printf("%d\n", sum);

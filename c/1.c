@@ -4,16 +4,14 @@
 
 #include <stdio.h>
 
-int main() {
-  int sum = 0;
-  
-  for (int i = 0; i < 1000; i++) {
-    if (i % 3 == 0 || i % 5 == 0) {
-      sum += i;
-    }
-  }
+int sumDivisible(int n, int target) {
+  int p = target / n;
+  return n * (p * (p + 1)) / 2;
+}
 
-  printf("%d\n", sum);
+int main() {
+  printf("%d\n",
+         sumDivisible(3, 999) + sumDivisible(5, 999) - sumDivisible(15, 999));
   return 0;
 }
 // 233168

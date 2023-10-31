@@ -4,32 +4,47 @@
 #include <math.h>
 #include <stdio.h>
 
-int primeChecker(int primes[], int sizeOfArray, int valueToCheck) {
-  for (int i = 0; i < sizeOfArray && primes[i] <= sqrt(valueToCheck); i++) {
-    if (valueToCheck % primes[i] == 0) {
-      // False - is not a prime
-      return -1;
+int isPrime(int n) {
+  // -1 is false
+  // 0 is true
+  if (n == 1) {
+    return -1;
+  } else if (n < 4) {
+    return 0;
+  } else if (n % 2 == 0) {
+    return -1;
+  } else if (n < 9) {
+    return 0;
+  } else if (n % 3 == 0) {
+    return -1;
+  } else {
+    int r = floor(sqrt(n));
+    int f = 5;
+    while (f <= r) {
+      if (n % f == 0) {
+        return -1;
+      }
+      if (n % (f + 2) == 0) {
+        return -1;
+      }
+      f += 6;
     }
+    return 0;
   }
-
-  // True - is a prime
-  return 0;
 }
 
 int main() {
-  int primes[10001] = {2, 3, 5, 7, 11, 13};
-  int n = 17;
-  int index = 6;
-
-  while (index <= 10000) {
-    if (primeChecker(primes, index, n) == 0) {
-      primes[index] = n;
-      index++;
+  int limit = 10001;
+  int count = 1;
+  int candidate = 1;
+  while (count != limit) {
+    candidate += 2;
+    if (isPrime(candidate) == 0) {
+      count++;
     }
-    n += 2;
   }
 
-  printf("%d\n", primes[10000]);
+  printf("%d\n", candidate);
 
   return 0;
 }

@@ -9,28 +9,12 @@
 
 #include <math.h>
 #include <stdio.h>
-int sumOfSquares(int n) {
-  int sum = 0;
-
-  for (int i = 1; i <= n; i++) {
-    sum += pow(i, 2);
-  }
-
-  return sum;
-}
-
-int squareOfSum(int n) {
-  int sum = 0;
-
-  for (int i = 1; i <= n; i++) {
-    sum += i;
-  }
-
-  return pow(sum, 2);
-}
 
 int main() {
-  printf("%d\n", squareOfSum(100) - sumOfSquares(100));
+  int limit = 100;
+  int sum = limit * (limit + 1) / 2;
+  int sumSq = (2 * limit + 1) * (limit + 1) * limit / 6;
+  printf("%d\n", sum * sum - sumSq);
   return 0;
 }
 // 25164150
