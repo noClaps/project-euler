@@ -45,3 +45,12 @@ Doing that got my C code to run 40 times faster than TS. The combination of usin
 The TypeScript code that I came up with seemed to be pretty good, but of course there's a far more optimised way to do it. Turns out that optimised way returns the correct value about 10 times faster in C than my original code did in TS. In my eyes, that probably means I wrote some decent TS.
 
 I've gone ahead and replaced all of my C code with the optimised algorithms from the Project Euler overviews. I'll be leaving my TypeScript code alone.
+
+# Problem 11
+This is an incredibly annoying problem to set up. There's a 20x20 grid, which means I need to set up an array of size 20x20. Once I have that set up I don't think it's gonna be too difficult to solve.
+
+Okay, so turns out it's actually a lot more difficult than I expected it to be, since I have to check if any adjacent values, in any direction, yield a higher maximum. My current plan is to check each direction around each element to find if there's a maximum in there somewhere.
+
+I ended up finding an optimisation that could be good, where instead of checking all directions, I only check half of them. In my case, I'm only checking east, southeast, south and southwest. I imagine there's a better way to do it, but that's the best I could think of, and it seems to be reasonably quick.
+
+My final solution runs in 8ms in TypeScript, and in about 200µs in C without any compiler optimisations (using default settings). I think I've successfully solved this problem as best I could.
