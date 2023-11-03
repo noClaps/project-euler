@@ -4,6 +4,8 @@ My main language is TypeScript and I know Python too, but I'm basically just mes
 
 Also none of them are general solutions, and work only for the specific problem.
 
+For benchmarking purposes, I'm using Bun for TypeScript, the version of Clang that comes with a MacBook's XCode tools without any extra flags (I just run `clang [filename].c`). I have a MacBook Air M2 with 16GB RAM. The versions are latest as of whenever I post the solutions, so look at the commit history for that I suppose.
+
 ## Problem 1
 A pretty simple solution, I got it fairly quickly in all languages.
 
@@ -54,3 +56,7 @@ Okay, so turns out it's actually a lot more difficult than I expected it to be, 
 I ended up finding an optimisation that could be good, where instead of checking all directions, I only check half of them. In my case, I'm only checking east, southeast, south and southwest. I imagine there's a better way to do it, but that's the best I could think of, and it seems to be reasonably quick.
 
 My final solution runs in 8ms in TypeScript, and in about 200µs in C without any compiler optimisations (using default settings). I think I've successfully solved this problem as best I could.
+
+# Problem 12
+
+This was a relatively simple problem to solve in TypeScript, and I submitted my solution. But when it came time to implement the better algorithm in C, the algorithm provided in the overview didn't work. Turns out it's because the list of primes I had generated using the isPrime() function from Problem 7 was missing a 2. That might have been because I accidently deleted it. Anyway, my TypeScript solution runs in about 48ms, while my C solution runs in 1.3ms. All things considered, my TS solution isn't bad.
