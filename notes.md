@@ -63,3 +63,16 @@ This was a relatively simple problem to solve in TypeScript, and I submitted my 
 
 # Problem 13
 This was a very fun problem to solve. For once, I can utilise the fact that large numbers tend to be inaccurate with the `int`/`number` data types.
+
+# Problem 14
+I've written a whole blog post about the Collatz Conjecture before, so it was quite a pleasant surprise to see it mentioned (the conjecture, not my blog post) in a Project Euler question. Anyway, this was a fairly simple problem to solve, and I'm quite proud of the optimisation that I made. I'm basically creating an array of Collatz sequence lengths, and if I encounter a number in my sequence that I've already found the sequence length for, then I'll simply add that length and break out of the loop. While the gains of using this method are small for small numbers, it means that I can save many steps. For example, here's the sequence for 13:
+
+13, 40, 20, 10, 5, 16, 8, 4, 2, 1
+
+Since while working my way up to 13, I've already encountered 5, I can simply add the sequence length for 5 instead of running those 6 steps again. In a case like 13, that's saved me nearly half the calculation!
+
+My algorithm is still quite slow, running in ~150ms in TS, but I imagine the optimised algo in C will run much more quickly.
+
+So it turns out that the "optimised" code might be too recursive, because it keeps throwing segfaults when I implement it in C. I've tried a bunch of methods and nothing seems to work, so I'll try implementing some of their optimisations into my original code, and write that out in C instead.
+
+I have no clue how to implement this code in C, so I might just skip it and move on for now. I'll come back to it later when I have a bit more experience with how C works. Or I'll get bored of C and just move on with my life. Either one works, I suppose.
