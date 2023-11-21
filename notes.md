@@ -76,3 +76,63 @@ My algorithm is still quite slow, running in ~150ms in TS, but I imagine the opt
 So it turns out that the "optimised" code might be too recursive, because it keeps throwing segfaults when I implement it in C. I've tried a bunch of methods and nothing seems to work, so I'll try implementing some of their optimisations into my original code, and write that out in C instead.
 
 I have no clue how to implement this code in C, so I might just skip it and move on for now. I'll come back to it later when I have a bit more experience with how C works. Or I'll get bored of C and just move on with my life. Either one works, I suppose.
+
+# Problem 15
+
+This is proving to be quite an annoying problem to solve. I have an algorithm that goes through and generates all possible paths, but seeing how slow it is to generate stuff up to a 20 x 20 grid, I imagine there's a faster algorithm. I almost tried simulating the movement manually, but stopped when I realised how silly that was.
+
+My main idea at the moment is that the numbers have something to do with binary, since the movement can be represented using either a 1 or a 0. I'm thinking there's a pattern or formula that relates the binary representation to the number of paths, or at the very least, will massively simplify my calculation. Currently I need a way to move individual bits around without moving the other ones.
+
+Actually, never mind. Although the binary representation did help, it turns out the answer was in Pascal's triangle all along. Here's a brief explanation:
+
+Let's say we're talking about a 2x2 grid. Let's assign a right movement to 1 and a down movement to 0. This means our possible movements are:
+
+```
+0011
+0101
+0110
+1001
+1010
+1100
+```
+
+If we then arrange this according to the position of the left-most bit, we get:
+
+```
+0011    0101    1001
+        0110    1010
+                1100
+```
+
+You can see that the 1st column has 1 element, the 2nd has 2, and the 3rd has 3. I wish this pattern continued on for larger grids but unfortunately it doesn't. For example, here's the table for a 3x3 grid:
+
+```
+000111  001011  010011  100011
+        001101  010101  100101
+        001110  010110  100110
+                011001  101001
+                011010  101100
+                011100  110001
+                        110010
+                        110100
+                        111000
+```
+
+Now the 1st column has 1, 2nd has 3, 3rd has 6 and 4th has 10.
+
+While I was trying to mess around with different things, I found that the numbers seemed to resemble polynomials of different orders, so I decided to check out Pascal's triangle to see if there was anything there. For context, here's what Pascal's triangle looks like:
+
+```
+        1
+      1   1
+    1   2   1
+  1   3   3   1
+1   4   6   4   1
+       ...
+```
+
+I immediately spotted the numbers I was looking for, they were in the diagonals! The 2x2 grid path starts from the 2nd row and goes diagonally downwards and to the right with 1, 2, 3. You can see the same with the 3x3 starting from the leftmost 1 on the 3rd row and going downwards through 1, 3, 6, 10.
+
+So it was obvious to me that the number of rows of Pascal's triangle that I'd need to generate was going to be $2*n-3$. After generating my triangle and doing some array indexing magic (C-style for loops are the best), I was able to generate my answer for this question in around 6.5ms with TypeScript. I imagine it'll be even faster with C.
+
+I feel so smart right now.
