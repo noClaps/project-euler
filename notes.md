@@ -140,3 +140,11 @@ I feel so smart right now.
 ## Problem 16
 
 This is a problem that pushes the integer limit of programming languages. It's an easy problem to solve in Python since the default integer limit depends on the size of memory, so Python doesn't necessarily have an integer limit. In other languages like C or TypeScript, the integer limit is more strictly defined. Using the normal `number` type in TypeScript will cause the number to be rounded, so the `BigInt` type is needed. I imagine C would need to use the `long int` type, or perhaps even `long long int`.
+
+## Problem 17
+
+This was a fairly simple problem to solve with just a few loops. I imagine working with strings will be a pain in C, but if I can optimise the solution to just use numbers in TypeScript then that should be pretty easy to convert over to C code. For now, I'm just creating the entire string from "one" to "onethousand" and finding the length of that. So it's optimising time!
+
+So I was able to convert my strings into numbers, but I had to keep the 1-99 function return as an array, since it was being iterated over in the 100-999 function. However, since the majority of the numbers were in that 100-999 function, this (probably) massively reduced the amount of computation and strings stuff I was doing. I'm sure there's a way to further optimise this solution so that it can get rid of arrays altogether. For example, I can multiply each "[x]hundredand" by 99 and then add on the result from `oneToNinetyNine()` to basically add the numbers from 100-199, 200-299, ...
+
+I'm quite happy with this optimisation for now, but I'm interested to see what the overview document has to say about it.
