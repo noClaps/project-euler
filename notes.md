@@ -136,3 +136,7 @@ I immediately spotted the numbers I was looking for, they were in the diagonals!
 So it was obvious to me that the number of rows of Pascal's triangle that I'd need to generate was going to be $2*n-3$. After generating my triangle and doing some array indexing magic (C-style for loops are the best), I was able to generate my answer for this question in around 6.5ms with TypeScript. I imagine it'll be even faster with C.
 
 I feel so smart right now.
+
+## Problem 16
+
+This is a problem that pushes the integer limit of programming languages. It's an easy problem to solve in Python since the default integer limit depends on the size of memory, so Python doesn't necessarily have an integer limit. In other languages like C or TypeScript, the integer limit is more strictly defined. Using the normal `number` type in TypeScript will cause the number to be rounded, so the `BigInt` type is needed. I imagine C would need to use the `long int` type, or perhaps even `long long int`.
