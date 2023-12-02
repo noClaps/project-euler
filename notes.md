@@ -173,3 +173,5 @@ Some improvements I could think of:
 - Maybe there's a way to start from the top, test the next 2-3 rows instead of only testing the immediately following one, and follow it down that way. This would essentially break the problem up into smaller chunks rather than trying to solve for every single value.
 
 I know I've been falling behind on implementing solutions in C, but right now I'm more focused on simply solving the problem. I will come back and write them at some point, though.
+
+So going through the forums, I found a commenter from 2004 (mather) who suggested a pretty good algorithm. I've implemented it and it runs about 2.5x faster than my original code in TypeScript alone. I'll leave both implementations in TS for now, but when I write the solution in C, I'll remove the TS code.
