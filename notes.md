@@ -148,3 +148,28 @@ This was a fairly simple problem to solve with just a few loops. I imagine worki
 So I was able to convert my strings into numbers, but I had to keep the 1-99 function return as an array, since it was being iterated over in the 100-999 function. However, since the majority of the numbers were in that 100-999 function, this (probably) massively reduced the amount of computation and strings stuff I was doing. I'm sure there's a way to further optimise this solution so that it can get rid of arrays altogether. For example, I can multiply each "[x]hundredand" by 99 and then add on the result from `oneToNinetyNine()` to basically add the numbers from 100-199, 200-299, ...
 
 I'm quite happy with this optimisation for now, but I'm interested to see what the overview document has to say about it.
+
+# Problem 18
+
+This is either a much harder problem than anything before it, or I'm really overthinking it. I'm tempted to brute-force it and just calculate all possible paths, but I want to find a better, faster algorithm that can do that more efficiently so that I can re-use it for the later problem.
+
+Maybe it's because binary's been on my mind lately, especially after Problem 15 and watching a Computerphile video on binary search, but I'm thinking I could convert this into a binary tree and try traversing it that way.
+
+I didn't end up using binary trees, and I basically brute-forced it anyway. I'm completely lost on what algorithm I'm supposed to be using here that can be more efficient than just trying all the paths. Maybe a more efficient traversal algorithm?
+
+My final strategy was to start with simply following the leftmost path, and then working my way rightwards from there. For instance, if we take the example triangle:
+
+```
+   3
+  7 4
+ 2 4 6
+8 5 9 3
+```
+
+I'd start with 3 -> 7 -> 2 -> 8, which I wrote down as "000", where "0" would signify a step to the left, and "1" would signify a step to the right. I then increased my path number from `0b000` up until `0b111`, and checked every single path along the way. Extending this to the larger triangle gave me a range from 0 to 16383, and hence the 16384 paths that were specified in the question.
+
+Some improvements I could think of:
+- Perhaps there's a way to do a proper binary tree traversal, by starting from the bottom left corner and working upwards from there.
+- Maybe there's a way to start from the top, test the next 2-3 rows instead of only testing the immediately following one, and follow it down that way. This would essentially break the problem up into smaller chunks rather than trying to solve for every single value.
+
+I know I've been falling behind on implementing solutions in C, but right now I'm more focused on simply solving the problem. I will come back and write them at some point, though.
