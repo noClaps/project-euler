@@ -181,3 +181,11 @@ I've finally written the older solutions in C. I have no clue how I'm supposed t
 ## Problem 19
 
 My solution to this problem feels a little bit like cheating since I have a book (_Secrets of Mental Math_ by Arthur Benjamin and Michael Shermer) that has a way to check the day of the week that every single day in the 20th and 21st centuries is on. It's a fairly simple calculation once you know the method, and I got the solution to it fairly easily.
+
+# Problem 20
+
+It was a pretty simple problem, so I don't really have much to say about it. However, I'm gonna be changing the way I do things now. I'll try to solve the problem in C, and if I can't do it for whatever reason, I'll switch over to TypeScript. If I can't do it there either, then I'll use Python.
+
+This is so that I can get as much practice as possible in C, and only fall back to the languages I'm more comfortable in if I really need to, eg. if I have to deal with parsing strings, for example. This is one of those problems, so I used TypeScript for it.
+
+Doing things this way solves 2 problems for me: I don't have to keep rewriting code in different languages and I can just focus on the problem, and I get to focus on actually working things out in C rather than just translating pseudocode from the overview documents.
