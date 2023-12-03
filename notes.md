@@ -149,7 +149,7 @@ So I was able to convert my strings into numbers, but I had to keep the 1-99 fun
 
 I'm quite happy with this optimisation for now, but I'm interested to see what the overview document has to say about it.
 
-# Problem 18
+## Problem 18
 
 This is either a much harder problem than anything before it, or I'm really overthinking it. I'm tempted to brute-force it and just calculate all possible paths, but I want to find a better, faster algorithm that can do that more efficiently so that I can re-use it for the later problem.
 
@@ -177,3 +177,7 @@ I know I've been falling behind on implementing solutions in C, but right now I'
 So going through the forums, I found a commenter from 2004 (mather) who suggested a pretty good algorithm. I've implemented it and it runs about 2.5x faster than my original code in TypeScript alone. I'll leave both implementations in TS for now, but when I write the solution in C, I'll remove the TS code.
 
 I've finally written the older solutions in C. I have no clue how I'm supposed to write the solutions to 14 and 16, since they deal with arrays and strings, which are my weaknesses in C. I guess I'll just skip them and move on, and maybe come back to them later if I'm more comfortable with them. I don't really see why I would be, considering I barely use C for anything other than Project Euler, and I get very little practice in it. But I suppose we'll see how it goes.
+
+## Problem 19
+
+My solution to this problem feels a little bit like cheating since I have a book (_Secrets of Mental Math_ by Arthur Benjamin and Michael Shermer) that has a way to check the day of the week that every single day in the 20th and 21st centuries is on. It's a fairly simple calculation once you know the method, and I got the solution to it fairly easily.
