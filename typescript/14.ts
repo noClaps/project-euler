@@ -13,7 +13,7 @@
 function collatzLength(n: number, lengths: number[]): number {
     let count = 1;
 
-    while (n != 1) {
+    while (n !== 1) {
         if (n < lengths.length) {
             count += lengths[n] - 1;
             break;

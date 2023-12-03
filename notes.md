@@ -175,3 +175,5 @@ Some improvements I could think of:
 I know I've been falling behind on implementing solutions in C, but right now I'm more focused on simply solving the problem. I will come back and write them at some point, though.
 
 So going through the forums, I found a commenter from 2004 (mather) who suggested a pretty good algorithm. I've implemented it and it runs about 2.5x faster than my original code in TypeScript alone. I'll leave both implementations in TS for now, but when I write the solution in C, I'll remove the TS code.
+
+I've finally written the older solutions in C. I have no clue how I'm supposed to write the solutions to 14 and 16, since they deal with arrays and strings, which are my weaknesses in C. I guess I'll just skip them and move on, and maybe come back to them later if I'm more comfortable with them. I don't really see why I would be, considering I barely use C for anything other than Project Euler, and I get very little practice in it. But I suppose we'll see how it goes.
