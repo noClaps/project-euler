@@ -16,14 +16,14 @@ function factorsLength(n: number): number {
         return 1;
     }
 
-    const factors: number[] = [];
+    let factors = 0;
     for (let i = 1; i <= Math.sqrt(n); i++) {
         if (n % i == 0) {
-            factors.push(i, n / i);
+            factors += 2;
         }
     }
 
-    return factors.length;
+    return factors;
 }
 
 let i = 1;
@@ -33,7 +33,7 @@ while (factorsLength(num) < 500) {
     i++;
 }
 
-console.log(num)
+console.log(num);
 // 76576500
 
 export { };
