@@ -48,7 +48,7 @@ The TypeScript code that I came up with seemed to be pretty good, but of course 
 
 I've gone ahead and replaced all of my C code with the optimised algorithms from the Project Euler overviews. I'll be leaving my TypeScript code alone.
 
-# Problem 11
+## Problem 11
 This is an incredibly annoying problem to set up. There's a 20x20 grid, which means I need to set up an array of size 20x20. Once I have that set up I don't think it's gonna be too difficult to solve.
 
 Okay, so turns out it's actually a lot more difficult than I expected it to be, since I have to check if any adjacent values, in any direction, yield a higher maximum. My current plan is to check each direction around each element to find if there's a maximum in there somewhere.
@@ -57,14 +57,14 @@ I ended up finding an optimisation that could be good, where instead of checking
 
 My final solution runs in 8ms in TypeScript, and in about 200µs in C without any compiler optimisations (using default settings). I think I've successfully solved this problem as best I could.
 
-# Problem 12
+## Problem 12
 
 This was a relatively simple problem to solve in TypeScript, and I submitted my solution. But when it came time to implement the better algorithm in C, the algorithm provided in the overview didn't work. Turns out it's because the list of primes I had generated using the isPrime() function from Problem 7 was missing a 2. That might have been because I accidently deleted it. Anyway, my TypeScript solution runs in about 48ms, while my C solution runs in 1.3ms. All things considered, my TS solution isn't bad.
 
-# Problem 13
+## Problem 13
 This was a very fun problem to solve. For once, I can utilise the fact that large numbers tend to be inaccurate with the `int`/`number` data types.
 
-# Problem 14
+## Problem 14
 I've written a whole blog post about the Collatz Conjecture before, so it was quite a pleasant surprise to see it mentioned (the conjecture, not my blog post) in a Project Euler question. Anyway, this was a fairly simple problem to solve, and I'm quite proud of the optimisation that I made. I'm basically creating an array of Collatz sequence lengths, and if I encounter a number in my sequence that I've already found the sequence length for, then I'll simply add that length and break out of the loop. While the gains of using this method are small for small numbers, it means that I can save many steps. For example, here's the sequence for 13:
 
 13, 40, 20, 10, 5, 16, 8, 4, 2, 1
@@ -77,7 +77,7 @@ So it turns out that the "optimised" code might be too recursive, because it kee
 
 I have no clue how to implement this code in C, so I might just skip it and move on for now. I'll come back to it later when I have a bit more experience with how C works. Or I'll get bored of C and just move on with my life. Either one works, I suppose.
 
-# Problem 15
+## Problem 15
 
 This is proving to be quite an annoying problem to solve. I have an algorithm that goes through and generates all possible paths, but seeing how slow it is to generate stuff up to a 20 x 20 grid, I imagine there's a faster algorithm. I almost tried simulating the movement manually, but stopped when I realised how silly that was.
 
@@ -182,10 +182,18 @@ I've finally written the older solutions in C. I have no clue how I'm supposed t
 
 My solution to this problem feels a little bit like cheating since I have a book (_Secrets of Mental Math_ by Arthur Benjamin and Michael Shermer) that has a way to check the day of the week that every single day in the 20th and 21st centuries is on. It's a fairly simple calculation once you know the method, and I got the solution to it fairly easily.
 
-# Problem 20
+## Problem 20
 
 It was a pretty simple problem, so I don't really have much to say about it. However, I'm gonna be changing the way I do things now. I'll try to solve the problem in C, and if I can't do it for whatever reason, I'll switch over to TypeScript. If I can't do it there either, then I'll use Python.
 
 This is so that I can get as much practice as possible in C, and only fall back to the languages I'm more comfortable in if I really need to, eg. if I have to deal with parsing strings, for example. This is one of those problems, so I used TypeScript for it.
 
 Doing things this way solves 2 problems for me: I don't have to keep rewriting code in different languages and I can just focus on the problem, and I get to focus on actually working things out in C rather than just translating pseudocode from the overview documents.
+
+## Problem 21
+
+I changed my mind, it's time to get Swifty! I'll be doing the problems in Swift now, because it gives me the speed close to C (especially if I use `swiftc` compiler optimisation!), while still being easy to write. It has a type syntax similar to that of Python, but the types actually matter to the compiler, unlike in TypeScript or Python. Overall, it's a solid language and I really like it.
+
+As for the problem, it wasn't too hard. I'm happy that I made the optimisation of only checking numbers up to the square root for the divisor sum. I wanted to use an array to check if I'd already checked a value before, but I figured that doing the check each time would probably slow my program down even more, so I just checked all 10000 numbers.
+
+Also, wow, I have not been consistent with my headings in this notes file. Some of them are `h1`s while others are `h2`s. I think I've fixed them all for now but I'll keep an eye out for if I find any others. And another thing, I'm no longer writing out the original question in comments at the top of each file. It's way too much work trying to format it correctly, for basically no reason. I'll keep the answer in a comment at the bottom, though.
