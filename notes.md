@@ -197,3 +197,11 @@ I changed my mind, it's time to get Swifty! I'll be doing the problems in Swift 
 As for the problem, it wasn't too hard. I'm happy that I made the optimisation of only checking numbers up to the square root for the divisor sum. I wanted to use an array to check if I'd already checked a value before, but I figured that doing the check each time would probably slow my program down even more, so I just checked all 10000 numbers.
 
 Also, wow, I have not been consistent with my headings in this notes file. Some of them are `h1`s while others are `h2`s. I think I've fixed them all for now but I'll keep an eye out for if I find any others. And another thing, I'm no longer writing out the original question in comments at the top of each file. It's way too much work trying to format it correctly, for basically no reason. I'll keep the answer in a comment at the bottom, though.
+
+## Problem 22
+
+These problems aren't that difficult and I'm getting kind of worried that something really hard is gonna show up soon.
+
+I solved this problem by sorting the list first, then just using the sorted list directly, rather than sorting every time I run the code. I initially created a new array with the alphabetical values for each name, and then looped through them to multiply each value by its position to get an array of name scores, while I then added up.
+
+However, I figured doing that many loops would probably not be very efficient, and so I shortened it to looping through all of the names, calculating the alphabetical score for each name, then multiplying that by the position in the list to get the name score, and adding it to the sum. I'm not sure if this is actually faster or not, but the code runs in about 600ms on my computer. It also takes a long time to compile, which I'm assuming is because of the huge list of names, but runs extremely fast once it's compiled.
