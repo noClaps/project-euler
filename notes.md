@@ -211,3 +211,5 @@ However, I figured doing that many loops would probably not be very efficient, a
 How did I speak a difficult problem into existence? Well it's not really difficult as much as it is slow. I'm pretty sure there's a way faster way to solve it but I really can't think of much else right now.
 
 Never mind, the solution was just to create an array of `true` values, and change them to `false` as they were verified to be incorrect. Then loop over the boolean array and add up the indices that were true. It still takes a while and I have no clue how to optimise it further, but that's about how far I've gotten so far. Maybe I'll come back to this in the future and try to speed it up, but for now I'm done.
+
+Looking through the discussion threads for the problem, I found a solution that uses booleans for everything: to store the abundant values as well as the sums of abundants. And it ran way faster than my code! That's probably because booleans are faster than integers, which makes sense since it's literally just a 1 and a 0, but still.

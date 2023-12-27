@@ -5,31 +5,32 @@ func isAbundant(_ num: Int) -> Bool {
 
   for i in 1...Int(sqrt(Double(num))) {
     if num % i == 0 {
-      sum += i
-
-      if Int(num / i) != i {
-        sum += Int(num / i)
-      }
+      sum += (Int(num / i) == i) ? i : (i + Int(num / i))
     }
   }
 
   return sum - num > num
 }
 
-var abundants = Array(12...28111).filter(isAbundant(_:))
-var ans = Array(repeating: true, count: 28123)
+var abuntants = Array(repeating: false, count: 28124)
+for i in 12...28111 {
+  abuntants[i] = isAbundant(i) ? true : false
+}
 
-for num in 24...28123 {
-  for i in abundants where abundants.contains(num - i) {
-    // Number is sum of 2 abundants -> incorrect
-    ans[num - 1] = false
-    break
+var sumOfAbundants = Array(repeating: false, count: 28124)
+for i in 12...28111 {
+  for j in 12...28111 where i + j <= 28123 {
+    if abuntants[i] && abuntants[j] {
+      sumOfAbundants[i + j] = true
+    }
   }
 }
 
 var sum = 0
-for i in 0..<ans.count {
-  sum += ans[i] ? i + 1 : 0
+for i in 0...28123 {
+  if !sumOfAbundants[i] {
+    sum += i
+  }
 }
 
 print(sum)
