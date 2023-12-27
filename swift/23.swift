@@ -12,23 +12,26 @@ func isAbundant(_ num: Int) -> Bool {
   return sum - num > num
 }
 
-var abuntants = Array(repeating: false, count: 28124)
-for i in 12...28111 {
-  abuntants[i] = isAbundant(i) ? true : false
-}
-
-var sumOfAbundants = Array(repeating: false, count: 28124)
-for i in 12...28111 {
-  for j in 12...28111 where i + j <= 28123 {
-    if abuntants[i] && abuntants[j] {
-      sumOfAbundants[i + j] = true
+func isSumOfAbundant(test: Int, arr: [Bool]) -> Bool {
+  for i in 0...Int(test / 2) {
+    let op1 = i
+    let op2 = test - i
+    if arr[op1] && arr[op2] {
+      return true
     }
   }
+
+  return false
+}
+
+var abundants = Array(repeating: false, count: 28124)
+for i in 12...28111 {
+  abundants[i] = isAbundant(i) ? true : false
 }
 
 var sum = 0
-for i in 0...28123 {
-  if !sumOfAbundants[i] {
+for i in 1...28123 {
+  if !isSumOfAbundant(test: i, arr: abundants) {
     sum += i
   }
 }
