@@ -205,3 +205,9 @@ These problems aren't that difficult and I'm getting kind of worried that someth
 I solved this problem by sorting the list first, then just using the sorted list directly, rather than sorting every time I run the code. I initially created a new array with the alphabetical values for each name, and then looped through them to multiply each value by its position to get an array of name scores, while I then added up.
 
 However, I figured doing that many loops would probably not be very efficient, and so I shortened it to looping through all of the names, calculating the alphabetical score for each name, then multiplying that by the position in the list to get the name score, and adding it to the sum. I'm not sure if this is actually faster or not, but the code runs in about 600ms on my computer. It also takes a long time to compile, which I'm assuming is because of the huge list of names, but runs extremely fast once it's compiled.
+
+## Problem 23
+
+How did I speak a difficult problem into existence? Well it's not really difficult as much as it is slow. I'm pretty sure there's a way faster way to solve it but I really can't think of much else right now.
+
+Never mind, the solution was just to create an array of `true` values, and change them to `false` as they were verified to be incorrect. Then loop over the boolean array and add up the indices that were true. It still takes a while and I have no clue how to optimise it further, but that's about how far I've gotten so far. Maybe I'll come back to this in the future and try to speed it up, but for now I'm done.
