@@ -215,3 +215,7 @@ Never mind, the solution was just to create an array of `true` values, and chang
 Looking through the discussion threads for the problem, I found a solution that uses booleans for everything: to store the abundant values as well as the sums of abundants. And it ran way faster than my code! That's probably because booleans are faster than integers, which makes sense since it's literally just a 1 and a 0, but still.
 
 Looking a bit further ahead, I found an even faster solution in Julia. Instead of creating an array of booleans where the abundant sums are `true`, it simply uses a function that returns whether or not a value is an abundant sum. Less loops means more speed. My compiled program now runs in around 16ms and I'm pretty happy with that.
+
+## Problem 24
+
+This was also a really difficult problem. I solved it by generating a bunch of random numbers that had all of the digits from 0 to 9, and putting them in a `Set`. This would prevent duplicates from forming. I then sorted the set and returned the millionth index. I don't really see how there's a way to do it other than pure brute force like I've done here. Although I bet someone smarter than me has probably figured it out already.
