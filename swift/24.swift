@@ -1,21 +1,11 @@
 import Foundation
 
-func generateNum() -> Int {
-  var vals = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
-
-  var num = ""
-
-  for _ in 0..<vals.count {
-    let n = vals[Int.random(in: 0..<vals.count)]
-    num += n
-    vals.removeAll(where: { $0 == n })
+func factorial(_ n: Int) -> Int {
+  if n <= 1 {
+    return 1
   }
 
-  return Int(num)!
-}
-
-func factorial(_ n: Int) -> Int {
-  var prod = 1
+  var prod: Int = 1
   for i in 2...n {
     prod *= i
   }
@@ -23,12 +13,28 @@ func factorial(_ n: Int) -> Int {
   return prod
 }
 
-var nums: Set<Int> = []
+var permutations = 1_000_000
+var digits = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+var solution: [Int] = []
 
-while nums.count < factorial(10) {
-  nums.update(with: generateNum())
+for i in stride(from: 9, through: 0, by: -1) {
+  var a: Int
+  let n = Double(permutations) / Double(factorial(i))
+
+  if n > floor(n) {
+    a = Int(n)
+  } else {
+    a = Int(n) - 1
+  }
+
+  solution.append(digits[Int(a)])
+  if digits.count > 1 {
+    digits.remove(at: Int(a))
+  }
+  permutations = permutations - a * factorial(i)
 }
 
-let sortedNums = nums.sorted()
-print(sortedNums[999999])
+let ans = solution.map({ "\($0)" }).joined()
+
+print(ans)
 // 2_783_915_460

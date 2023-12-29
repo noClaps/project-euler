@@ -219,3 +219,9 @@ Looking a bit further ahead, I found an even faster solution in Julia. Instead o
 ## Problem 24
 
 This was also a really difficult problem. I solved it by generating a bunch of random numbers that had all of the digits from 0 to 9, and putting them in a `Set`. This would prevent duplicates from forming. I then sorted the set and returned the millionth index. I don't really see how there's a way to do it other than pure brute force like I've done here. Although I bet someone smarter than me has probably figured it out already.
+
+Well, I was right. Someone smarter than me came up with a much better solution. I'll just quote them:
+
+> It uses the fact that permutations are lexicographically ordered. We have 9! of them starting with 0, then 9! of them starting with 1, and so on. Given that you can fit 9! about 2.8 times in 1,000,000 the first digit is a 2 and you're left with 9 more digits and you're looking for the 1,000,000 - 2*9!=274,240th permutation among them. Rinse and repeat.
+
+Thanks kazi123_ on the Project Euler forum!
