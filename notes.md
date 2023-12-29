@@ -225,3 +225,11 @@ Well, I was right. Someone smarter than me came up with a much better solution. 
 > It uses the fact that permutations are lexicographically ordered. We have 9! of them starting with 0, then 9! of them starting with 1, and so on. Given that you can fit 9! about 2.8 times in 1,000,000 the first digit is a 2 and you're left with 9 more digits and you're looking for the 1,000,000 - 2*9!=274,240th permutation among them. Rinse and repeat.
 
 Thanks kazi123_ on the Project Euler forum!
+
+## Problem 25
+
+It's a Fibonacci sequence problem, and the numbers to go 1000 digits! That means I get to use my super special array numbers technique! Yay!
+
+That was sarcasm, if you couldn't tell. While I'm very happy with my array method of getting around trying to work out really really big numbers, it's a pain to implement and usually has bugs, and so I don't really like using it. Anyway, I implemented a Fibonacci algorithm with my array numbers, and got an answer. It's still running slightly slower than I'd like it to, but it's fast enough that I don't feel the need to go hunting for a faster algorithm.
+
+I wish the Project Euler forum had more Swift answers. Everyone seems to be solving the problems in Python, C++, Java, Assembly, Julia and other languages. I haven't really seen much JS/TS or Swift.
