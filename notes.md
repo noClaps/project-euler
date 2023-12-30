@@ -233,3 +233,11 @@ It's a Fibonacci sequence problem, and the numbers to go 1000 digits! That means
 That was sarcasm, if you couldn't tell. While I'm very happy with my array method of getting around trying to work out really really big numbers, it's a pain to implement and usually has bugs, and so I don't really like using it. Anyway, I implemented a Fibonacci algorithm with my array numbers, and got an answer. It's still running slightly slower than I'd like it to, but it's fast enough that I don't feel the need to go hunting for a faster algorithm.
 
 I wish the Project Euler forum had more Swift answers. Everyone seems to be solving the problems in Python, C++, Java, Assembly, Julia and other languages. I haven't really seen much JS/TS or Swift.
+
+## Problem 26
+
+I can't believe that my 05:00 brain was able to come up with this solution. I basically used the method of division that we did in school, where we'd keep going to the next digit in the dividend to see if the divisor could go into it, and then keep track of all the remainders. Except, I did that with the whole number all at once, and just kept dividing and dividing until I either ecountered a remainder that I'd already seen before, or I simply ran out of numbers to divide. After that it was as simple as finding the longest chain, which was basically the most number of remainders I got through before enountering something that I'd already seen.
+
+My program runs in around 8ms, and I'm pretty happy with it. I realise that I never actually bothered to check if the remainder chain I got was from a recurring cycle or not, but I got the answer and it's not that likely that I'd actually get a non-recurring chain that long anyways. Or something like that I don't really have a logical reason for why it would work right now, I'm just glad that it did.
+
+Also, I leveled up on completing level 25, which means I'm level 1 now. Yay!
