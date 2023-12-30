@@ -241,3 +241,13 @@ I can't believe that my 05:00 brain was able to come up with this solution. I ba
 My program runs in around 8ms, and I'm pretty happy with it. I realise that I never actually bothered to check if the remainder chain I got was from a recurring cycle or not, but I got the answer and it's not that likely that I'd actually get a non-recurring chain that long anyways. Or something like that I don't really have a logical reason for why it would work right now, I'm just glad that it did.
 
 Also, I leveled up on completing level 25, which means I'm level 1 now. Yay!
+
+## Problme 27
+
+This was strangely simple but also kind of hard. There's quite a lot of steps you have to think through and I'm surprised I got it as quickly as I did. It's also funny to me that I've basically memorised the `isPrime()` function after having used it so many times for Project Euler.
+
+I'm also getting fewer errors when I write code in Swift, and I think I'm understanding the language more, so at the very least I'm making progress with that.
+
+Anyway, code runs too slow, I'll have to find some optimisations. Actually, never mind. Compiling it with optimisations made it way faster. I keep forgetting that the `swift` command doesn't compile with optimisations on by default. I'm not too fussed about the unoptimised performance since most programs that I write in Swift (if I continue using it in the future) are gonna be compiled with optimisations. I'm only really concerned when the code takes a while to run even when compiled with optimisations on.
+
+Basically I'm just chasing the dopamine hit I get from seeing performant code, and `swiftc -O` gives me that.
