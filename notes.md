@@ -251,3 +251,7 @@ I'm also getting fewer errors when I write code in Swift, and I think I'm unders
 Anyway, code runs too slow, I'll have to find some optimisations. Actually, never mind. Compiling it with optimisations made it way faster. I keep forgetting that the `swift` command doesn't compile with optimisations on by default. I'm not too fussed about the unoptimised performance since most programs that I write in Swift (if I continue using it in the future) are gonna be compiled with optimisations. I'm only really concerned when the code takes a while to run even when compiled with optimisations on.
 
 Basically I'm just chasing the dopamine hit I get from seeing performant code, and `swiftc -O` gives me that.
+
+## Problem 28
+
+This problem looked a lot harder than it was. Once I figured out a pattern for generating the numbers, getting their sequence was pretty easy, and making the sum was even easier. And since I'm only keeping track of the current position, and not worrying about the entire sequence as I'm adding the value to the sum immediately, the program runs extremely quickly, even though it's dealing with pretty large values.
