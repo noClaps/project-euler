@@ -255,3 +255,11 @@ Basically I'm just chasing the dopamine hit I get from seeing performant code, a
 ## Problem 28
 
 This problem looked a lot harder than it was. Once I figured out a pattern for generating the numbers, getting their sequence was pretty easy, and making the sum was even easier. And since I'm only keeping track of the current position, and not worrying about the entire sequence as I'm adding the value to the sum immediately, the program runs extremely quickly, even though it's dealing with pretty large values.
+
+## Problem 29
+
+This feels like one of those problems that's a lot harder than it looks. Conceptually, it's pretty simple: just go through the numbers and work out the powers, removing the repeated ones. The issue arises when you end up having to deal with numbers past the integer limit of the system. I mean, sure you could solve the problem with Python or some other language that doesn't have the integer limit, but that ruins all the fun.
+
+I have some ideas with factorisation but I'm not quite sure what they are yet, or how I'm going to implement them. Even coming back after a long break from Project Euler hasn't really given me any new ideas.
+
+Well, I solved it using my "infinite number" array method. There was a bug where I was restructuring the array too early and it was causing issues, but I eventually managed to fix it, by moving the line calling the `restructure()` function down a line. Also, my solution is fairly quick to return a value, so I"m fairly happy with it.
