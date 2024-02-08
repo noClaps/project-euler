@@ -242,7 +242,7 @@ My program runs in around 8ms, and I'm pretty happy with it. I realise that I ne
 
 Also, I leveled up on completing level 25, which means I'm level 1 now. Yay!
 
-## Problme 27
+## Problem 27
 
 This was strangely simple but also kind of hard. There's quite a lot of steps you have to think through and I'm surprised I got it as quickly as I did. It's also funny to me that I've basically memorised the `isPrime()` function after having used it so many times for Project Euler.
 
