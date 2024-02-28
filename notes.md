@@ -263,3 +263,5 @@ This feels like one of those problems that's a lot harder than it looks. Concept
 I have some ideas with factorisation but I'm not quite sure what they are yet, or how I'm going to implement them. Even coming back after a long break from Project Euler hasn't really given me any new ideas.
 
 Well, I solved it using my "infinite number" array method. There was a bug where I was restructuring the array too early and it was causing issues, but I eventually managed to fix it, by moving the line calling the `restructure()` function down a line. Also, my solution is fairly quick to return a value, so I"m fairly happy with it.
+
+I just solved this problem using Julia, and the code was so much nicer and faster than Swift. I'm honestly kind of blown away. I might try using Julia for future (and maybe past) problems. I also tried the same method in Python and it gives the wrong answer for some reason. All that shows me is that Julia is just better for math problems like these.
