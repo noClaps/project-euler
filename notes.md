@@ -7,36 +7,45 @@ Also none of them are general solutions, and work only for the specific problem.
 For benchmarking purposes, I'm using Bun for TypeScript, the version of Clang that comes with a MacBook's XCode tools without any extra flags (I just run `clang [filename].c`). I have a MacBook Air M2 with 16GB RAM. The versions are latest as of whenever I post the solutions, so look at the commit history for that I suppose.
 
 ## Problem 1
+
 A pretty simple solution, I got it fairly quickly in all languages.
 
 ## Problem 2
+
 Similarly easy solution, got it in all langs.
 
 ## Problem 3
+
 My first introduction to `long` in C, since the numbers were exceeding the integer limit. Otherwise a fairly simple solution.
 
 ## Problem 4
+
 Working with strings in C is hell. I got the solution very quickly everywhere else, but I have no clue how to reverse a string in C. I eventually got the solution by simply looking up how to reverse a string in C, and copying the answer. I kind of get it, but I'll definitely need someone to explain exactly what it's doing.
 
 It kinda makes me wanna stay away from working with strings in C, and just stick to numbers. But at the same time, I really do want to learn how C works for _everything_, not just the easy stuff. I'm addicted to the speed. Might end up returning to C for strings once I'm more comfortable with the other concepts of C.
 
 ## Problem 5
+
 I did manage to solve this one initially myself, but I found a more efficient way to do it online, so I ended up implementing that instead. It uses the fact that the least common multiple of all numbers up to a certain number is the product of all of the primes, each to the power of the fraction log(20) / log(prime).
 
 The math behind it seems pretty complicated, and even reading through the overview on the Project Euler website, I don't fully get it yet.
 
 ## Problem 6
+
 Super easy problem, solved in all languages without much issue.
 
 ## Problem 7
+
 I wrote my own prime checker function for this one in C, and I'm very proud of it. At first it was running pretty slowly, but after getting help from @MesterMan03, I got it running really quickly.
 
 I haven't really talked about the other languages so far, so here's a small update I suppose. This was the last problem I did in Python, and it was really easy in both TS and Py. Pretty much all of them have been really easy problems so far, it's just C that's been giving me issues since I'm not nearly as comfortable in it.
 
 ## Problem 8
+
 Had to work with strings again in C, but I've come to realise that as long as I'm not writing a function that has to return a string it's all fine and easy. Pretty easy solution to do otherwise.
 
 ## Problem 9
+
 My initial C code was running slower than my TS code, even though they were both running the exact same code. I'm not fully sure why C was taking a longer time to run the same thing.
 
 New plan: Solve the problem in TypeScript, read the overview to find a better algorithm or way of doing it, and attempt to implement that in C. This will kill two birds with one stone, since I'll be solving the problems, as well as implementing an algorithm (usually a more complex one) in the language I'm trying to learn.
@@ -44,11 +53,13 @@ New plan: Solve the problem in TypeScript, read the overview to find a better al
 Doing that got my C code to run 40 times faster than TS. The combination of using a faster algorithm with a compiled language means stupidly quick speeds. I love programming.
 
 ## Problem 10
+
 The TypeScript code that I came up with seemed to be pretty good, but of course there's a far more optimised way to do it. Turns out that optimised way returns the correct value about 10 times faster in C than my original code did in TS. In my eyes, that probably means I wrote some decent TS.
 
 I've gone ahead and replaced all of my C code with the optimised algorithms from the Project Euler overviews. I'll be leaving my TypeScript code alone.
 
 ## Problem 11
+
 This is an incredibly annoying problem to set up. There's a 20x20 grid, which means I need to set up an array of size 20x20. Once I have that set up I don't think it's gonna be too difficult to solve.
 
 Okay, so turns out it's actually a lot more difficult than I expected it to be, since I have to check if any adjacent values, in any direction, yield a higher maximum. My current plan is to check each direction around each element to find if there's a maximum in there somewhere.
@@ -62,9 +73,11 @@ My final solution runs in 8ms in TypeScript, and in about 200µs in C without an
 This was a relatively simple problem to solve in TypeScript, and I submitted my solution. But when it came time to implement the better algorithm in C, the algorithm provided in the overview didn't work. Turns out it's because the list of primes I had generated using the isPrime() function from Problem 7 was missing a 2. That might have been because I accidently deleted it. Anyway, my TypeScript solution runs in about 48ms, while my C solution runs in 1.3ms. All things considered, my TS solution isn't bad.
 
 ## Problem 13
+
 This was a very fun problem to solve. For once, I can utilise the fact that large numbers tend to be inaccurate with the `int`/`number` data types.
 
 ## Problem 14
+
 I've written a whole blog post about the Collatz Conjecture before, so it was quite a pleasant surprise to see it mentioned (the conjecture, not my blog post) in a Project Euler question. Anyway, this was a fairly simple problem to solve, and I'm quite proud of the optimisation that I made. I'm basically creating an array of Collatz sequence lengths, and if I encounter a number in my sequence that I've already found the sequence length for, then I'll simply add that length and break out of the loop. While the gains of using this method are small for small numbers, it means that I can save many steps. For example, here's the sequence for 13:
 
 13, 40, 20, 10, 5, 16, 8, 4, 2, 1
@@ -169,6 +182,7 @@ My final strategy was to start with simply following the leftmost path, and then
 I'd start with 3 -> 7 -> 2 -> 8, which I wrote down as "000", where "0" would signify a step to the left, and "1" would signify a step to the right. I then increased my path number from `0b000` up until `0b111`, and checked every single path along the way. Extending this to the larger triangle gave me a range from 0 to 16383, and hence the 16384 paths that were specified in the question.
 
 Some improvements I could think of:
+
 - Perhaps there's a way to do a proper binary tree traversal, by starting from the bottom left corner and working upwards from there.
 - Maybe there's a way to start from the top, test the next 2-3 rows instead of only testing the immediately following one, and follow it down that way. This would essentially break the problem up into smaller chunks rather than trying to solve for every single value.
 
@@ -222,9 +236,9 @@ This was also a really difficult problem. I solved it by generating a bunch of r
 
 Well, I was right. Someone smarter than me came up with a much better solution. I'll just quote them:
 
-> It uses the fact that permutations are lexicographically ordered. We have 9! of them starting with 0, then 9! of them starting with 1, and so on. Given that you can fit 9! about 2.8 times in 1,000,000 the first digit is a 2 and you're left with 9 more digits and you're looking for the 1,000,000 - 2*9!=274,240th permutation among them. Rinse and repeat.
+> It uses the fact that permutations are lexicographically ordered. We have 9! of them starting with 0, then 9! of them starting with 1, and so on. Given that you can fit 9! about 2.8 times in 1,000,000 the first digit is a 2 and you're left with 9 more digits and you're looking for the 1,000,000 - 2\*9! = 274,240th permutation among them. Rinse and repeat.
 
-Thanks kazi123_ on the Project Euler forum!
+Thanks kazi123\_ on the Project Euler forum!
 
 ## Problem 25
 
