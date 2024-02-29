@@ -279,3 +279,9 @@ I have some ideas with factorisation but I'm not quite sure what they are yet, o
 Well, I solved it using my "infinite number" array method. There was a bug where I was restructuring the array too early and it was causing issues, but I eventually managed to fix it, by moving the line calling the `restructure()` function down a line. Also, my solution is fairly quick to return a value, so I"m fairly happy with it.
 
 I just solved this problem using Julia, and the code was so much nicer and faster than Swift. I'm honestly kind of blown away. I might try using Julia for future (and maybe past) problems. I also tried the same method in Python and it gives the wrong answer for some reason. All that shows me is that Julia is just better for math problems like these.
+
+## Problem 30
+
+This was a fairly simple solution. Apparently the upper limit for the number is 5\*(9^5), which I'm not sure why that is, but also kind of makes sense. The 9^5 part makes sense anyway, since the highest a 5-digit number can be is 99999, and the sum of that is 5\*(9^5). Why it has to be a 5-digit number I'm not fully sure, but it accepted my answer so I guess I'm not complaining too much. There's probably really smart people in the forums who have a mathematical answer for it but I don't.
+
+Also, Julia is so much fun to work with. The name of the language makes it really hard to talk about in a conversation, because if someone doesn't know what Julia is, they'll be very confused to hear me say "I've loved using Julia for my math problems". That, and the 1-based indexing are about the only problems I've had with Julia so far. Also, my editor doesn't currently give me autocompletion or syntax highlight for it, so I'm pretty much just writing it in TextEdit or something.
