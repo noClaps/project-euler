@@ -1,48 +1,31 @@
 #include <math.h>
+#include <stdbool.h>
 #include <stdio.h>
 
-int isPrime(int n) {
-  // -1 is false
-  // 0 is true
-  if (n == 1) {
-    return -1;
-  } else if (n < 4) {
-    return 0;
-  } else if (n % 2 == 0) {
-    return -1;
-  } else if (n < 9) {
-    return 0;
-  } else if (n % 3 == 0) {
-    return -1;
-  } else {
-    int r = floor(sqrt(n));
-    int f = 5;
-    while (f <= r) {
-      if (n % f == 0) {
-        return -1;
-      }
-      if (n % (f + 2) == 0) {
-        return -1;
-      }
-      f += 6;
+bool isPrime(int n) {
+  for (int i = 2; i <= sqrt(n); i++) {
+    if (n % i == 0) {
+      return false;
     }
-    return 0;
   }
+
+  return true;
 }
 
 int main() {
-  int limit = 10001;
-  int count = 1;
-  int candidate = 1;
-  while (count != limit) {
-    candidate += 2;
-    if (isPrime(candidate) == 0) {
-      count++;
+  int counter = 0;
+  int prime = 0;
+  int n = 0;
+
+  while (counter != 10001) {
+    if (isPrime(n)) {
+      prime = n;
+      counter += 1;
     }
+    n += 1;
   }
 
-  printf("%d\n", candidate);
-
+  printf("%d\n", prime);
   return 0;
 }
 // 104743

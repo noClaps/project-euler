@@ -1,28 +1,27 @@
 #include <math.h>
+#include <stdbool.h>
 #include <stdio.h>
 
-int main() {
-  int limit = 2000000;
-  int sievebound = (limit - 1) / 2;
-  int sieve[limit];
-  int crosslimit = (floor(sqrt(limit)) - 1) / 2;
-  for (int i = 1; i <= crosslimit; i++) {
-    if (sieve[i] != 1) {
-      for (int j = 2 * i * (i + 1); j <= sievebound; j += 2 * i + 1) {
-        sieve[j] = 1;
-      }
+bool isPrime(long n) {
+  for (int i = 2; i <= sqrt(n); i++) {
+    if (n % i == 0) {
+      return false;
     }
   }
 
-  long sum = 2;
-  for (int i = 1; i <= sievebound; i++) {
-    if (sieve[i] != 1) {
-      sum += 2 * i + 1;
+  return true;
+}
+
+int main() {
+  long sum = 0;
+
+  for (long i = 2; i <= 2e6; i++) {
+    if (isPrime(i)) {
+      sum += i;
     }
   }
 
   printf("%ld\n", sum);
-  // 142913828922
-
   return 0;
 }
+// 142913828922

@@ -113,8 +113,8 @@ int main() {
   char ansString[11];
   ansString[0] = sumString[0];
   strncpy(ansString + 1, sumString + 2, 9);
-  printf("%s\n", ansString);
-  // 5537376230
 
+  printf("%s\n", ansString);
   return 0;
 }
+// 5537376230

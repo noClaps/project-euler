@@ -40,7 +40,6 @@ int main() {
   }
 
   printf("%ld\n", currentMax);
-  // 23514624000
-
   return 0;
 }
+// 23514624000

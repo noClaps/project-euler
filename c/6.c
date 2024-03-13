@@ -1,10 +1,25 @@
 #include <stdio.h>
 
+int sumOfSquares() {
+  int sum = 0;
+  for (int i = 0; i <= 100; i++) {
+    sum += i * i;
+  }
+
+  return sum;
+}
+
+int squareOfSum() {
+  int sum = 0;
+  for (int i = 0; i <= 100; i++) {
+    sum += i;
+  }
+
+  return sum * sum;
+}
+
 int main() {
-  int limit = 100;
-  int sum = limit * (limit + 1) / 2;
-  int sumSq = (2 * limit + 1) * (limit + 1) * limit / 6;
-  printf("%d\n", sum * sum - sumSq);
+  printf("%d\n", squareOfSum() - sumOfSquares());
   return 0;
 }
 // 25164150

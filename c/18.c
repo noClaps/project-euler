@@ -30,7 +30,6 @@ int main() {
   }
 
   printf("%d\n", triangle[0][0]);
-  // 1074
-
   return 0;
 }
+// 1074

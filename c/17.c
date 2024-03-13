@@ -55,7 +55,6 @@ int main() {
   strlen += 11; // onethousand
 
   printf("%d\n", strlen);
-  // 21124
-
   return 0;
 }
+// 21124

@@ -2,39 +2,16 @@
 #include <stdio.h>
 
 int main() {
-  // Need to use long as numbers can get really big
-  long lastFactor;
   long n = 600851475143;
 
-  if (n % 2 == 0) {
-    lastFactor = 2;
-    n /= 2;
-    while (n % 2 == 0) {
-      n /= 2;
+  for (int i = 2; i <= round(sqrt(n)); i++) {
+    while (n % i == 0) {
+      n = n / i;
     }
-  } else {
-    lastFactor = 1;
   }
 
-  int factor = 3;
-  double maxFactor = sqrt(n);
+  printf("%ld\n", n);
 
-  while (n > 1 && factor <= maxFactor) {
-    if (n % factor == 0) {
-      n /= factor;
-      lastFactor = factor;
-      while (n % factor == 0) {
-        n /= factor;
-      }
-      maxFactor = sqrt(n);
-    }
-    factor += 2;
-  }
-
-  if (n == 1) {
-    printf("%ld\n", lastFactor);
-  } else {
-    printf("%ld\n", n);
-  }
+  return 0;
 }
 // 6857

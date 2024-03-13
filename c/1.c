@@ -6,8 +6,13 @@ int sumDivisible(int n, int target) {
 }
 
 int main() {
-  printf("%d\n",
-         sumDivisible(3, 999) + sumDivisible(5, 999) - sumDivisible(15, 999));
+  int sum = 0;
+  for (int i = 1; i < 1000; i++) {
+    if (i % 3 == 0 || i % 5 == 0) {
+      sum += i;
+    }
+  }
+  printf("%d\n", sum);
   return 0;
 }
 // 233168

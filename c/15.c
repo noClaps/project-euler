@@ -12,7 +12,6 @@ long countRoutes(int n) {
 
 int main() {
   printf("%ld\n", countRoutes(20));
-  // 137846528820
-
   return 0;
 }
+// 137846528820

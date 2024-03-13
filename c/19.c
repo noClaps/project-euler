@@ -34,7 +34,6 @@ int main() {
   }
 
   printf("%d\n", numOfSundays);
-  // 171
-
   return 0;
 }
+// 171

@@ -1,49 +1,20 @@
-#include <math.h>
 #include <stdio.h>
 
-int gcd(int num1, int num2) {
-  int maxGcd;
-  for (int i = 0; i < num1; i++) {
-    if (num1 % i == 0 && num2 % i == 0 && i > maxGcd) {
-      maxGcd = i;
-    }
-  }
-
-  return maxGcd;
-}
-
 int main() {
-  int k;
+  int ans = 0;
 
-  int s = 1000;
-  int s2 = s / 2;
-  int mlimit = ceil(sqrt(s2)) - 1;
-
-  for (int m = 2; m <= mlimit; m++) {
-    if (s2 % m == 0) {
-      int sm = s2 / m;
-      while (sm % 2 == 0) {
-        sm /= 2;
-      }
-      if (m % 2 == 1) {
-        k = m + 2;
-      } else {
-        k = m + 1;
-      }
-      while (k < 2 * m && k <= sm) {
-        if (sm % k == 0 && gcd(k, m) == 1) {
-          int d = s2 / (k * m);
-          int n = k - m;
-          int a = d * (m * m - n * n);
-          int b = 2 * d * m * n;
-          int c = d * (m * m + n * n);
-          printf("%d\n", a * b * c);
-          // 31875000
+  for (int a = 1; a <= 1000; a++) {
+    for (int b = 1; b <= 1000; b++) {
+      for (int c = 1; c <= 1000; c++) {
+        if (a * a + b * b == c * c && a + b + c == 1000) {
+          ans = a * b * c;
+          break;
         }
-        k += 2;
       }
     }
   }
 
+  printf("%d\n", ans);
   return 0;
 }
+// 31875000%
